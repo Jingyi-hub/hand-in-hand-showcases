@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hand in Hand — Good Luck Team | Showcase</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --muted:#8ea0c6;
+      --text:#e9f0ff;
+      --accent:#7CFFB2;
+      --accent2:#7aa7ff;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(122,167,255,.18), transparent 60%),
+                  radial-gradient(900px 600px at 80% 0%, rgba(124,255,178,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:16px 18px;}
+    .topbar{display:flex; gap:12px; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(124,255,178,.9), rgba(122,167,255,.9));
+      box-shadow: var(--shadow);
+    }
+    nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:999px;
+      border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .hero{
+      padding:42px 0 22px;
+    }
+    .hero-grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1.3fr .7fr;
+      align-items:stretch;
+    }
+    @media (max-width: 880px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    .h-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--muted);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line); background: rgba(255,255,255,.03);
+      font-size:12px; color:var(--muted);
+    }
+    h1{margin:10px 0 8px; font-size:38px; line-height:1.1}
+    .sub{color:var(--muted); font-size:16px; max-width:65ch}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:600; font-size:14px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,255,178,.22), rgba(122,167,255,.18));
+      border-color: rgba(124,255,178,.22);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(12, 1fr);
+      margin: 18px 0 46px;
+    }
+    .card{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .span-8{grid-column: span 8;}
+    .span-6{grid-column: span 6;}
+    .span-5{grid-column: span 5;}
+    .span-4{grid-column: span 4;}
+    .span-3{grid-column: span 3;}
+    .span-12{grid-column: span 12;}
+    @media (max-width: 880px){
+      .span-8,.span-6,.span-5,.span-4,.span-3{grid-column: span 12;}
+    }
+    h2{margin:0 0 10px; font-size:22px}
+    h3{margin:0 0 10px; font-size:16px; color:var(--text)}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .stat{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      padding:14px; border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .stat b{font-size:22px}
+    .stat small{color:var(--muted)}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 880px){ .two-col{grid-template-columns:1fr} }
+    .timeline{
+      border-left:2px solid rgba(122,167,255,.35);
+      padding-left:14px;
+      margin: 10px 0 0;
+    }
+    .t-item{margin:12px 0; padding:10px 12px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.02)}
+    .t-item .t-title{display:flex; justify-content:space-between; gap:10px; align-items:baseline}
+    .tag{
+      font-size:12px; padding:4px 8px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+      background: rgba(255,255,255,.02);
+      white-space:nowrap;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;
+      color:var(--muted);
+    }
+    code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div style="font-weight:800">Hand in Hand</div>
+        <div class="muted" style="font-size:12px">Good Luck Team · Track 2: Social Responsibility</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#origin">Origin</a>
+      <a href="#model">Core Model</a>
+      <a href="#features">Features</a>
+      <a href="#impact">Impact</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#ai">AI Tools</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="overview">
+    <div class="hero-grid">
+      <div class="h-card">
+        <div class="kicker">
+          <span class="pill">Education promotes rural revitalization</span>
+          <span class="pill">Research-based learning + Community engagement</span>
+        </div>
+        <h1>Hand in Hand</h1>
+        <p class="sub">
+          Facilitating comprehensive rural revitalization through education outreaching — a multi-region, interdisciplinary practice model
+          that connects university & secondary school students with rural communities.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#downloads">Get the source files</a>
+          <a class="btn" href="#impact">Jump to outcomes</a>
+          <a class="btn" href="#model">View the “Four-Phase” model</a>
+        </div>
+      </div>
+
+      <div class="h-card">
+        <h3>Quick facts</h3>
+        <div class="two-col" style="margin-top:10px">
+          <div class="stat"><div><small>Geographic coverage</small><br><b>3</b> provinces</div><span class="tag">6 villages</span></div>
+          <div class="stat"><div><small>WeChat articles</small><br><b>19</b></div><span class="tag">plus 3 videos</span></div>
+          <div class="stat"><div><small>Live streams</small><br><b>1</b></div><span class="tag">~30 min</span></div>
+          <div class="stat"><div><small>Total interactions</small><br><b>10k+</b></div><span class="tag">social impact</span></div>
+        </div>
+        <p class="muted" style="margin:12px 0 0">
+          Numbers are summarized from the team’s presentation and report materials.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="origin">
+    <div class="card span-6">
+      <h2>Origin & research framing</h2>
+      <p class="muted">
+        The project starts from curiosity about rural revitalization challenges such as talent outflow and limited aesthetic-education
+        resources, then frames a research question using the PEO approach (Population–Exposure–Outcome).
+      </p>
+      <ul class="list">
+        <li><b>Population</b>: rural communities (e.g., left-behind children), grassroots cadres, returnee youth pioneers</li>
+        <li><b>Exposure</b>: “educational empowerment” interventions (aesthetic education outreach, new media communication)</li>
+        <li><b>Outcome</b>: improved aesthetic literacy, measurable social impact via media analytics</li>
+      </ul>
+      <p class="muted" style="margin-top:10px">
+        Research question: To what extent can an educational empowerment model stimulate endogenous motivation and cultural vitality in rural communities?
+      </p>
+    </div>
+
+    <div class="card span-6">
+      <h2>Goals</h2>
+      <div class="two-col">
+        <div class="t-item">
+          <div class="t-title"><b>Direct action</b><span class="tag">Education & donations</span></div>
+          <div class="muted">Improve learning and cultural experiences for left-behind children through aesthetic education and material support.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Social influence</b><span class="tag">New media</span></div>
+          <div class="muted">Create rural-themed content (e.g., “Youth Helping Agriculture”) to expand public attention and participation.</div>
+        </div>
+        <div class="t-item" style="grid-column:1/-1">
+          <div class="t-title"><b>Long-term strategy</b><span class="tag">Replicable model</span></div>
+          <div class="muted">Summarize a scalable “education empowerment” model to support broader talent revitalization & cultural activation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card span-12" id="model">
+      <h2>Core model: Four-Phase Education Empowerment</h2>
+      <p class="muted">
+        The team operationalizes a mature framework — “study in / learn from / learn for / enable the countryside” — and injects Gen‑Z
+        energy and new media storytelling into practical implementation.
+      </p>
+      <div class="two-col" style="margin-top:10px">
+        <div class="t-item">
+          <div class="t-title"><b>Study in</b><span class="tag">Immersive field study</span></div>
+          <div class="muted">Live and learn in rural contexts to build empathy and scientific understanding of local realities.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Learn from</b><span class="tag">Local wisdom</span></div>
+          <div class="muted">Interview grassroots cadres, Party members, and returnee pioneers to learn community resilience and solutions.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Learn for</b><span class="tag">Service & responsibility</span></div>
+          <div class="muted">Teach arts & culture classes, and support tech‑driven poverty alleviation, turning learning into public value.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Enable</b><span class="tag">Activate endogenous motivation</span></div>
+          <div class="muted">Use a new‑media matrix to tell rural stories and amplify community vitality and sustained engagement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="features">
+    <div class="card span-8">
+      <h2>Practice features</h2>
+      <div class="two-col">
+        <div class="t-item">
+          <div class="t-title"><b>Multi‑region coordination</b><span class="tag">3 provinces</span></div>
+          <div class="muted">Suzhou (Jiangsu), Xi’an (Shaanxi), and Fuyang (Anhui) with site-specific activities across six villages.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Interwoven themes</b><span class="tag">Education · Poverty · Culture</span></div>
+          <div class="muted">Red education, teaching, poverty alleviation, social research, academic inquiry, and cultural exploration.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Hand in hand</b><span class="tag">University × High school</span></div>
+          <div class="muted">11 members: 6 undergraduates + 5 secondary school students, supported by faculty mentors and a media professional.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Interdisciplinary approach</b><span class="tag">Cross‑faculty</span></div>
+          <div class="muted">Urban planning, economics & finance, financial mathematics, and Chinese language & literature roles complement each other.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card span-4">
+      <h2>Workflow</h2>
+      <p class="muted">A research‑oriented learning path used throughout the project:</p>
+      <div class="timeline">
+        <div class="t-item"><div class="t-title"><b>Question</b><span class="tag">Curiosity</span></div><div class="muted">Identify a real-world rural challenge.</div></div>
+        <div class="t-item"><div class="t-title"><b>Research</b><span class="tag">Field + Desk</span></div><div class="muted">Interviews, observation, and literature/policy study.</div></div>
+        <div class="t-item"><div class="t-title"><b>Design</b><span class="tag">Co-create</span></div><div class="muted">Discuss, propose, and iterate solutions.</div></div>
+        <div class="t-item"><div class="t-title"><b>Practice</b><span class="tag">Implement</span></div><div class="muted">Outreach, teaching, and tech support in communities.</div></div>
+        <div class="t-item"><div class="t-title"><b>Reflect</b><span class="tag">Evaluate</span></div><div class="muted">Data synthesis and continuous improvement.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="impact">
+    <div class="card span-12">
+      <h2>Outcomes & impact</h2>
+      <p class="muted">
+        Impact is captured through both on-the-ground outcomes and new-media analytics (articles, videos, livestream).
+      </p>
+      <div class="two-col" style="margin-top:10px">
+        <div class="stat"><div><small>Videos</small><br><b>3</b></div><span class="tag">plus livestream</span></div>
+        <div class="stat"><div><small>WeChat articles</small><br><b>19</b></div><span class="tag">series reporting</span></div>
+        <div class="stat"><div><small>Livestream</small><br><b>1</b></div><span class="tag">~30 min</span></div>
+        <div class="stat"><div><small>Total interactions</small><br><b>10,000+</b></div><span class="tag">platform metrics</span></div>
+      </div>
+
+      <div class="two-col" style="margin-top:12px">
+        <div class="t-item">
+          <div class="t-title"><b>Media recognition</b><span class="tag">Amplification</span></div>
+          <div class="muted">Featured by Suzhou Traffic Radio; also reported by Fuyang Normal University’s official website.</div>
+        </div>
+        <div class="t-item">
+          <div class="t-title"><b>Visualization ideas</b><span class="tag">Optional</span></div>
+          <div class="muted">Suggested visuals include a before/after village scene, “four-part symphony” model illustration, and quote visualizations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="reflection">
+    <div class="card span-7">
+      <h2>Reflection</h2>
+      <p class="muted">
+        By reviewing the project cycle, the team connects practice experience with research-oriented teaching processes:
+        theory foundation, comparative thinking, field investigation, participatory iteration, differentiated solutions, and multi‑stakeholder evaluation.
+      </p>
+      <div class="two-col" style="margin-top:10px">
+        <div class="t-item"><div class="t-title"><b>What worked</b><span class="tag">Strengths</span></div><div class="muted">Policy tailwinds, Gen‑Z perspective, multi‑region coordination, “hand in hand” structure.</div></div>
+        <div class="t-item"><div class="t-title"><b>What to improve</b><span class="tag">Weaknesses</span></div><div class="muted">Early-stage field experience challenges addressed by inviting mentors and senior media professionals.</div></div>
+      </div>
+    </div>
+
+    <div class="card span-5" id="ai">
+      <h2>AI tools usage</h2>
+      <p class="muted">
+        AI was used as an assistant for non-core tasks such as concept imagery, terminology checks, and multi-platform copy adaptation.
+        Core content remains team-original.
+      </p>
+      <ul class="list">
+        <li><b>Midjourney</b>: concept image generation</li>
+        <li><b>XJTLU AI</b>: terminology proofreading, cross-platform copy variants</li>
+      </ul>
+      <p class="muted" style="margin-top:10px">
+        The materials also compare common image-generation tools and summarize commercial use considerations.
+      </p>
+    </div>
+  </section>
+
+  <section class="grid" id="downloads">
+    <div class="card span-12">
+      <h2>Downloads</h2>
+      <p class="muted">Open the original source files used to build this webpage.</p>
+      <ul class="list">
+        <li><a href="presentation_slides.pptx">Presentation slides (PPTX, ~61MB)</a></li>
+        <li><a href="hand_in_hand_report.pdf">Report / PDF (~21MB)</a></li>
+        <li><a href="summit_ppt_outline.docx">Outline (DOCX)</a></li>
+      </ul>
+      <p class="muted" style="margin-top:10px">
+        Tip: If links do not open in your environment, download the HTML and keep it in the same folder as these files.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>
+        <b>Hand in Hand — Showcase page</b><br/>
+        <span class="muted">Built from the uploaded PPTX / PDF / DOCX materials.</span>
+      </div>
+      <div class="muted">
+        Suggested use: competition showcase, portfolio site, or project landing page.
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
